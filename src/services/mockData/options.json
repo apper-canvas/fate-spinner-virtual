@@ -1,0 +1,37 @@
+[
+  {
+    "id": "opt_1",
+    "text": "Pizza Night",
+    "color": "#FF006E",
+    "weight": 1,
+    "createdAt": "2024-01-15T18:30:00.000Z"
+  },
+  {
+    "id": "opt_2", 
+    "text": "Sushi Restaurant",
+    "color": "#8338EC",
+    "weight": 1,
+    "createdAt": "2024-01-15T18:31:00.000Z"
+  },
+  {
+    "id": "opt_3",
+    "text": "Home Cooking",
+    "color": "#FB5607", 
+    "weight": 1,
+    "createdAt": "2024-01-15T18:32:00.000Z"
+  },
+  {
+    "id": "opt_4",
+    "text": "Food Truck Hunt",
+    "color": "#06FFA5",
+    "weight": 1,
+    "createdAt": "2024-01-15T18:33:00.000Z"
+  },
+  {
+    "id": "opt_5",
+    "text": "Fine Dining Experience",
+    "color": "#FFBE0B",
+    "weight": 1,
+    "createdAt": "2024-01-15T18:34:00.000Z"
+  }
+]

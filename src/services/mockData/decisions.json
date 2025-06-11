@@ -1,0 +1,126 @@
+[
+  {
+    "id": "decision_1704482400000",
+    "options": [
+      {
+        "id": "opt_1",
+        "text": "Movie Night",
+        "color": "#FF006E",
+        "weight": 1
+      },
+      {
+        "id": "opt_2", 
+        "text": "Game Night",
+        "color": "#8338EC",
+        "weight": 1
+      },
+      {
+        "id": "opt_3",
+        "text": "Go Out Dancing",
+        "color": "#FB5607",
+        "weight": 1
+      }
+    ],
+    "winner": {
+      "id": "opt_2",
+      "text": "Game Night", 
+      "color": "#8338EC",
+      "weight": 1
+    },
+    "method": "wheel",
+    "timestamp": "2024-01-15T20:00:00.000Z"
+  },
+  {
+    "id": "decision_1704478800000",
+    "options": [
+      {
+        "id": "opt_4",
+        "text": "Yes",
+        "color": "#06FFA5",
+        "weight": 1
+      },
+      {
+        "id": "opt_5",
+        "text": "No",
+        "color": "#FF4365", 
+        "weight": 1
+      }
+    ],
+    "winner": {
+      "id": "opt_4",
+      "text": "Yes",
+      "color": "#06FFA5",
+      "weight": 1
+    },
+    "method": "coin",
+    "timestamp": "2024-01-15T19:00:00.000Z"
+  },
+  {
+    "id": "decision_1704475200000",
+    "options": [
+      {
+        "id": "opt_6",
+        "text": "Italian Food",
+        "color": "#FF006E",
+        "weight": 1
+      },
+      {
+        "id": "opt_7",
+        "text": "Mexican Food",
+        "color": "#8338EC", 
+        "weight": 1
+      },
+      {
+        "id": "opt_8",
+        "text": "Chinese Food",
+        "color": "#FB5607",
+        "weight": 1
+      },
+      {
+        "id": "opt_9",
+        "text": "Thai Food",
+        "color": "#06FFA5",
+        "weight": 1
+      }
+    ],
+    "winner": {
+      "id": "opt_8",
+      "text": "Chinese Food",
+      "color": "#FB5607",
+      "weight": 1
+    },
+    "method": "dice",
+    "timestamp": "2024-01-15T18:00:00.000Z"
+  },
+  {
+    "id": "decision_1704471600000", 
+    "options": [
+      {
+        "id": "opt_10",
+        "text": "Take a Break",
+        "color": "#FFBE0B",
+        "weight": 1
+      },
+      {
+        "id": "opt_11",
+        "text": "Keep Working",
+        "color": "#3A86FF",
+        "weight": 1
+      },
+      {
+        "id": "opt_12",
+        "text": "Go for a Walk",
+        "color": "#06FFA5",
+        "weight": 1
+      }
+    ],
+    "winner": {
+      "id": "opt_10",
+      "text": "Take a Break",
+      "color": "#FFBE0B",
+      "weight": 1
+    },
+    "method": "eightball",
+    "timestamp": "2024-01-15T17:00:00.000Z"
+  }
+]
