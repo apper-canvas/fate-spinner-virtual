@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import OptionInput from './OptionInput';
-import AnimationSelector from './AnimationSelector';
-import SpinningWheel from './SpinningWheel';
-import DiceRoller from './DiceRoller';
-import MagicEightBall from './MagicEightBall';
-import CoinFlipper from './CoinFlipper';
-import ResultsModal from './ResultsModal';
+import OptionInput from '@/components/organisms/OptionInput';
+import AnimationSelector from '@/components/organisms/AnimationSelector';
+import SpinningWheel from '@/components/molecules/SpinningWheel';
+import DiceRoller from '@/components/molecules/DiceRoller';
+import MagicEightBall from '@/components/molecules/MagicEightBall';
+import CoinFlipper from '@/components/molecules/CoinFlipper';
+import ResultsModal from '@/components/organisms/ResultsModal';
+import Card from '@/components/molecules/Card';
+import Button from '@/components/atoms/Button';
 
 const ANIMATION_TYPES = {
   wheel: 'wheel',
@@ -83,10 +85,9 @@ function MainFeature({ onDecisionMade }) {
   return (
     <div className="space-y-8">
       {/* Option Input Section */}
-      <motion.div
+      <Card
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="bg-surface rounded-xl p-6 border border-secondary/30 neon-glow"
       >
         <h2 className="font-heading text-xl text-white mb-4">
           ✨ Enter Your Options
@@ -109,7 +110,7 @@ function MainFeature({ onDecisionMade }) {
             </p>
           </motion.div>
         )}
-      </motion.div>
+      </Card>
 
       {/* Animation Selector */}
       {validOptions.length >= 2 && (
@@ -128,11 +129,11 @@ function MainFeature({ onDecisionMade }) {
 
       {/* Animation Display */}
       {validOptions.length >= 2 && (
-        <motion.div
+        <Card
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="bg-surface/50 rounded-xl p-8 border border-secondary/20 min-h-[400px] flex flex-col items-center justify-center"
+          className="min-h-[400px] flex flex-col items-center justify-center"
         >
           {selectedAnimation === 'wheel' && (
             <SpinningWheel
@@ -167,7 +168,7 @@ function MainFeature({ onDecisionMade }) {
           )}
 
           {/* Spin Button */}
-          <motion.button
+          <Button
             whileHover={canSpin ? { scale: 1.05 } : {}}
             whileTap={canSpin ? { scale: 0.95 } : {}}
             onClick={handleSpin}
@@ -193,14 +194,14 @@ function MainFeature({ onDecisionMade }) {
                      selectedAnimation === 'eightball' ? 'Shake the 8-Ball' :
                      'Flip the Coin'}!`
             )}
-          </motion.button>
+          </Button>
 
           {!canSpin && !isAnimating && (
             <p className="text-gray-400 text-sm mt-2">
               {validOptions.length < 2 ? 'Add at least 2 options to begin' : ''}
             </p>
           )}
-        </motion.div>
+        </Card>
       )}
 
       {/* Results Modal */}

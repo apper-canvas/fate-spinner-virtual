@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { toast } from 'react-toastify';
-import MainFeature from '../components/MainFeature';
-import HistorySidebar from '../components/HistorySidebar';
-import { decisionService } from '../services';
+import MainFeature from '@/components/organisms/MainFeature';
+import HistorySidebar from '@/components/organisms/HistorySidebar';
+import { decisionService } from '@/services';
+import Button from '@/components/atoms/Button';
 
-function Home() {
+function HomePage() {
   const [decisions, setDecisions] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -63,14 +64,14 @@ function Home() {
       </div>
 
       {/* History Sidebar Toggle Button */}
-      <motion.button
+      <Button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setShowHistory(!showHistory)}
         className="fixed top-20 right-4 z-30 bg-surface text-white p-3 rounded-full neon-glow border border-secondary lg:hidden"
       >
         <span className="text-lg">📜</span>
-      </motion.button>
+      </Button>
 
       {/* Desktop History Sidebar */}
       <div className="hidden lg:block w-80 flex-shrink-0 border-l border-surface">
@@ -119,4 +120,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomePage;

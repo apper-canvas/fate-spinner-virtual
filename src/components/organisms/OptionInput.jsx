@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import ApperIcon from './ApperIcon';
+import ApperIcon from '@/components/ApperIcon';
+import Button from '@/components/atoms/Button';
+import Input from '@/components/atoms/Input';
 
 const COLORS = [
   '#FF006E', '#8338EC', '#FB5607', '#06FFA5', '#FFBE0B', 
@@ -88,7 +90,7 @@ function OptionInput({ options, onChange, maxOptions = 20 }) {
           { key: 'activity', label: 'Activities', icon: '🎯' },
           { key: 'weekend', label: 'Weekend', icon: '🌟' }
         ].map(({ key, label, icon }) => (
-          <motion.button
+          <Button
             key={key}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -96,7 +98,7 @@ function OptionInput({ options, onChange, maxOptions = 20 }) {
             className="px-3 py-1 text-xs bg-secondary/20 text-secondary border border-secondary/30 rounded-full hover:bg-secondary/30 transition-colors"
           >
             {icon} {label}
-          </motion.button>
+          </Button>
         ))}
       </div>
 
@@ -131,7 +133,7 @@ function OptionInput({ options, onChange, maxOptions = 20 }) {
 
                 {/* Input Field */}
                 <div className="flex-1 relative">
-                  <input
+                  <Input
                     type="text"
                     value={option.text}
                     onChange={(e) => updateOption(option.id, { text: e.target.value })}
@@ -154,14 +156,14 @@ function OptionInput({ options, onChange, maxOptions = 20 }) {
 
                 {/* Remove Button */}
                 {options.length > 2 && (
-                  <motion.button
+                  <Button
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     onClick={() => removeOption(option.id)}
                     className="p-2 text-error hover:bg-error/20 rounded-lg transition-colors opacity-0 group-hover:opacity-100"
                   >
                     <ApperIcon name="X" size={16} />
-                  </motion.button>
+                  </Button>
                 )}
               </div>
             </motion.div>
@@ -171,7 +173,7 @@ function OptionInput({ options, onChange, maxOptions = 20 }) {
 
       {/* Action Buttons */}
       <div className="flex flex-wrap gap-3 pt-4 border-t border-white/10">
-        <motion.button
+        <Button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={addOption}
@@ -184,10 +186,10 @@ function OptionInput({ options, onChange, maxOptions = 20 }) {
         >
           <ApperIcon name="Plus" size={16} />
           Add Option ({options.length}/{maxOptions})
-        </motion.button>
+        </Button>
 
         {validOptions.length > 0 && (
-          <motion.button
+          <Button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={clearAll}
@@ -195,7 +197,7 @@ function OptionInput({ options, onChange, maxOptions = 20 }) {
           >
             <ApperIcon name="Trash2" size={16} />
             Clear All
-          </motion.button>
+          </Button>
         )}
       </div>
     </div>

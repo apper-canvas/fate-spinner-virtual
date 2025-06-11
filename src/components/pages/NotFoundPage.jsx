@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import ApperIcon from '../components/ApperIcon';
+import ApperIcon from '@/components/ApperIcon';
+import Button from '@/components/atoms/Button';
 
-function NotFound() {
+function NotFoundPage() {
   const navigate = useNavigate();
 
   return (
@@ -23,7 +24,7 @@ function NotFound() {
         <p className="text-gray-400 mb-6 max-w-md">
           Looks like this page got lost in the carnival. Let's get you back to the main show!
         </p>
-        <motion.button
+        <Button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => navigate('/')}
@@ -31,10 +32,10 @@ function NotFound() {
         >
           <ApperIcon name="Home" className="w-5 h-5 inline mr-2" />
           Back to Fate Spinner
-        </motion.button>
+        </Button>
       </motion.div>
     </div>
   );
 }
 
-export default NotFound;
+export default NotFoundPage;

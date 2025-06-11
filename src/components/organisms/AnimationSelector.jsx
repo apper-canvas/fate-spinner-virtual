@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import Card from '@/components/molecules/Card';
 
 const ANIMATIONS = [
   {
@@ -53,7 +54,7 @@ function AnimationSelector({ selected, onChange, optionCount }) {
   };
 
   return (
-    <div className="bg-surface rounded-xl p-6 border border-secondary/30 neon-glow">
+    <Card>
       <h2 className="font-heading text-xl text-white mb-4">
         🎪 Choose Your Animation
       </h2>
@@ -159,7 +160,7 @@ function AnimationSelector({ selected, onChange, optionCount }) {
           </div>
         </motion.div>
       )}
-    </div>
+    </Card>
   );
 }
 

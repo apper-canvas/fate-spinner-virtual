@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { format } from 'date-fns';
-import ApperIcon from './ApperIcon';
+import ApperIcon from '@/components/ApperIcon';
+import Button from '@/components/atoms/Button';
 
 function HistorySidebar({ decisions, loading, error, onRepeat, onClear, onRetry, onClose }) {
   const getMethodEmoji = (method) => {
@@ -34,7 +35,7 @@ function HistorySidebar({ decisions, loading, error, onRepeat, onClear, onRetry,
       <div className="text-4xl mb-4">😵</div>
       <h3 className="text-error font-heading mb-2">Oops!</h3>
       <p className="text-gray-400 text-sm mb-4">{error}</p>
-      <motion.button
+      <Button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={onRetry}
@@ -42,7 +43,7 @@ function HistorySidebar({ decisions, loading, error, onRepeat, onClear, onRetry,
       >
         <ApperIcon name="RotateCcw" size={16} className="inline mr-2" />
         Try Again
-      </motion.button>
+      </Button>
     </motion.div>
   );
 
@@ -76,12 +77,12 @@ function HistorySidebar({ decisions, loading, error, onRepeat, onClear, onRetry,
             Decision History
           </h2>
           {onClose && (
-            <button
+            <Button
               onClick={onClose}
               className="text-gray-400 hover:text-white transition-colors lg:hidden"
             >
               <ApperIcon name="X" size={20} />
-            </button>
+            </Button>
           )}
         </div>
         
@@ -90,14 +91,14 @@ function HistorySidebar({ decisions, loading, error, onRepeat, onClear, onRetry,
             <p className="text-xs text-gray-400">
               {decisions.length} decision{decisions.length !== 1 ? 's' : ''}
             </p>
-            <motion.button
+            <Button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={onClear}
               className="text-xs text-error hover:bg-error/20 px-2 py-1 rounded transition-colors"
             >
               Clear All
-            </motion.button>
+            </Button>
           </div>
         )}
       </div>
@@ -171,7 +172,7 @@ function HistorySidebar({ decisions, loading, error, onRepeat, onClear, onRetry,
                   </div>
 
                   {/* Repeat button */}
-                  <motion.button
+                  <Button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => onRepeat(decision)}
@@ -179,7 +180,7 @@ function HistorySidebar({ decisions, loading, error, onRepeat, onClear, onRetry,
                   >
                     <ApperIcon name="RotateCcw" size={12} className="inline mr-1" />
                     Repeat Decision
-                  </motion.button>
+                  </Button>
                 </motion.div>
               ))}
             </AnimatePresence>

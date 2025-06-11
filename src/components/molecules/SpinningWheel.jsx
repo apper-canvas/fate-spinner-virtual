@@ -112,7 +112,7 @@ function SpinningWheel({ options, isSpinning, result }) {
 
       setRotation(currentRotation);
       drawWheel();
-
+      
       if (progress < 1) {
         animationRef.current = requestAnimationFrame(animate);
       }

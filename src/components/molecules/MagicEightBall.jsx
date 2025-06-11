@@ -82,7 +82,7 @@ function MagicEightBall({ options, isShaking, result }) {
                   ?
                 </motion.div>
               )}
-            </div>
+            </motion.div>
           </div>
         </motion.div>
       </motion.div>

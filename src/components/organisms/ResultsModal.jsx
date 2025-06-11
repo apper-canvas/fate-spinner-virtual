@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import ApperIcon from './ApperIcon';
+import ApperIcon from '@/components/ApperIcon';
+import Button from '@/components/atoms/Button';
 
 const CONFETTI_COLORS = ['#FF006E', '#8338EC', '#FB5607', '#06FFA5', '#FFBE0B', '#FF4365'];
 
@@ -116,12 +117,12 @@ function ResultsModal({ isOpen, result, method, onAccept, onRespin, onClose }) {
           >
             <div className="bg-surface rounded-2xl shadow-2xl max-w-md w-full p-8 border border-secondary/30 neon-glow">
               {/* Close button */}
-              <button
+              <Button
                 onClick={onClose}
                 className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
               >
                 <ApperIcon name="X" size={20} />
-              </button>
+              </Button>
 
               {/* Header */}
               <motion.div
@@ -169,17 +170,17 @@ function ResultsModal({ isOpen, result, method, onAccept, onRespin, onClose }) {
                 transition={{ delay: 0.6 }}
                 className="space-y-3"
               >
-                <motion.button
+                <Button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={onAccept}
                   className="w-full bg-primary text-white py-3 px-6 rounded-xl font-heading text-lg neon-glow hover:bg-primary/90 transition-colors"
                 >
                   ✅ Accept This Fate
-                </motion.button>
+                </Button>
 
                 <div className="flex gap-3">
-                  <motion.button
+                  <Button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={onRespin}
@@ -187,9 +188,9 @@ function ResultsModal({ isOpen, result, method, onAccept, onRespin, onClose }) {
                   >
                     <ApperIcon name="RotateCcw" size={16} className="inline mr-2" />
                     Try Again
-                  </motion.button>
+                  </Button>
 
-                  <motion.button
+                  <Button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={onClose}
@@ -197,7 +198,7 @@ function ResultsModal({ isOpen, result, method, onAccept, onRespin, onClose }) {
                   >
                     <ApperIcon name="ArrowLeft" size={16} className="inline mr-2" />
                     Back
-                  </motion.button>
+                  </Button>
                 </div>
               </motion.div>
 
