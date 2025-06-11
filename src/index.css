@@ -85,3 +85,45 @@ body {
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.5);
 }
+
+/* Custom range slider styles */
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #FF006E;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 8px rgba(255, 0, 110, 0.5);
+  transition: all 0.2s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background: #e6005f;
+  transform: scale(1.1);
+  box-shadow: 0 0 12px rgba(255, 0, 110, 0.7);
+}
+
+.slider::-webkit-slider-thumb:disabled {
+  background: #666;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #FF006E;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 8px rgba(255, 0, 110, 0.5);
+  transition: all 0.2s ease;
+}
+
+.slider::-moz-range-thumb:hover {
+  background: #e6005f;
+  transform: scale(1.1);
+  box-shadow: 0 0 12px rgba(255, 0, 110, 0.7);
+}
